@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Detials</title>
+</head>
+<style>
+    table,th,td{
+        border: 1px , solid, black ;
+    }
+</style>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Salary</th>
+        </tr>
+
+        <tr th:object="${staff}">
+            <td th:text="*{staffName}"> </td>
+            <td th:text="*{staffAdress}"> </td>
+            <td th:text="*{staffSalary}"> </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
