@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+</head>
+
+<body>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px, black, solid;
+        }
+    </style>
+
+    <h2>Hello </h2>
+
+    <table style="width:100%">
+        <tr>
+            <th>id</th>
+            <th>FirstName</th>
+            <th>SecondName</th>
+            <th>LastNmae</th>
+            <th>DebName</th>
+            <th>EmailAddress</th>
+            <th>Salary</th>
+        </tr>
+            
+        <tr th:object="${user}">
+            <td th:text="*{id}"></td>
+            <td th:text="*{firstName}"></td>
+            <td th:text="*{secondName}"></td>
+            <td th:text="*{lastName}"></td>
+            <td th:text="*{debName}"></td>
+            <td th:text="*{emailAddress}"></td> 
+            <td th:text="*{salary}"></td> 
+        </tr>
+       
+    </table>
+</body>
+
+</html>
