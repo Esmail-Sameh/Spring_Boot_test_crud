@@ -1,18 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Detials</title>
+    <title>Document</title>
 </head>
 <style>
-    table,th,td{
-        border: 1px , solid, black ;
+    table,
+    th,
+    td {
+        border: 1px, solid, black;
     }
 </style>
+
 <body>
+
     <table style="width:100%">
         <tr>
             <th>Name</th>
@@ -20,13 +23,14 @@
             <th>Salary</th>
         </tr>
 
-        <tr th:object="${allStaff}">
-            <th th:text="*{staffName}"> </th>
+        <tr th:object="${all}">
+            <th th:text="*{staffName}"  > </th>
             <th th:text="*{staffAdress}"> </th>
             <th th:text="*{staffSalary}"> </th>
         </tr>
 
     </table>
+
 </body>
 
 </html>

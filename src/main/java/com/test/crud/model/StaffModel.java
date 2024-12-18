@@ -17,6 +17,10 @@ public class StaffModel{
     }
     
 
+    public StaffModel() {
+    }
+    
+
     public String getStaffName() {
         return this.staffName;
     }

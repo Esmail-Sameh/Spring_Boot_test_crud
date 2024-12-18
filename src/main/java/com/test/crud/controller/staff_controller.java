@@ -1,14 +1,17 @@
 
 package com.test.crud.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 import com.test.crud.model.StaffModel;
 import com.test.crud.model.UserModel;
+
 
 @Controller
 public class staff_controller {
@@ -376,6 +379,7 @@ public class staff_controller {
             new UserModel(12, "Ahmed", "Gmail", "Tamer", "Engineer", "Ahmed.Gamail1980@gmail.com", 30000)
             );
 
+            List<StaffModel> allStaff = new ArrayList<>();
     @GetMapping("/staffdetials")
     public String getStaffDetials(Model model) {
         StaffModel myModel = new StaffModel(
@@ -400,16 +404,24 @@ public class staff_controller {
         return "user_data";
     }
 
+    
     @GetMapping("/")
     public String getTestJavaFunction(Model model) {
-        model.addAttribute("dataTest", "Esmail Sameh");
+        StaffModel myStaffModel = new StaffModel("Esmail" , "Cairo" , 2000);
+        model.addAttribute("staffData", myStaffModel);
         return "home_page";
     }
 
-    @GetMapping("/all")
-    public String getAllData(Model model) {
-        model.addAttribute("alldata", allData);
-        return "alldata";
+    @PostMapping("/addNewStaff")
+    public String getAllData(StaffModel staff) {
+        allStaff.add(staff);
+        return "redirect:/getStaffData";
     }
 
+    @GetMapping("getStaffData")
+    public String getStaffData(Model model) {
+        model.addAttribute("all", allStaff);
+        return "show_all_staff";
+    }
+    
 }

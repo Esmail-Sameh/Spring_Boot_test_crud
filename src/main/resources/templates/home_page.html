@@ -6,7 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 th:text="${#strings.contains(dataTest, 'Esmail')}"></h1>
+    <h1> Add New Staff</h1>
+
+    <div class="center-screen">
+        <form method="post" th:object="${staffData}" th:action="@{/addNewStaff}"> 
+
+            <label for="staffName"> Staff Name</label>
+            <br>
+            <input type="text" placeholder="Name" th:field="*{staffName}">
+            <br><br><br>
+
+            <label for="staffAddress"> Staff Address</label>
+            <br>
+            <input type="text" placeholder="Address" th:field="*{staffAdress}">
+            <br><br><br>
+
+            <label for="staffSalary"> Staff Salary</label>
+            <br>
+            <input type="number" placeholder="Salary" th:field="*{staffSalary}">
+            <br><br><br>
+
+            <input type="submit" value="submit">
+
+        </form>
+    </div>
+    
     
 </body>
 </html>
